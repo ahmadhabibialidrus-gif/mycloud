@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>MyCloud</title>
+</head>
+
+
+<body>
+
+
+	<h1> MyCloud</h1>
+
+	<p>Penyimpanan cloud pribadi saya.</p>
+
+	<hr>
+
+	<h2>Storage</h2>
+
+	<p>0 GB / 100 GB</p>
+
+
+	<form action="/upload" method="post" enctype="multipart/form-data">
+
+
+		<input type="file" name="file" required>
+
+
+		<button type="submit">
+			Upload File
+		</button>
+
+
+	</form>
+
+
+	<h2>File Saya</h2>
+
+	<div id="file-list"></div>
+
+	<script>
+	const filelist = document.getElementById("file-list");
+
+	async function loadFiles() {
+		const response = await fetch("/files");
+		const files = await response.json();
+
+		filelist.innerHTML = "";
+
+
+		files.forEach(file => {
+			const item = document.createElement("p");
+			item.textContent = file.name + "-" + (file.size / 1024 /1024).toFixed(2) + " MB";
+			fileList.appendChild(item);
+		});
+	}
+
+
+	loadFiles();
+	</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
