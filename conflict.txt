@@ -1,2 +1,4 @@
 MyCloud configuration
 Environment: development
+environtment: production
+
